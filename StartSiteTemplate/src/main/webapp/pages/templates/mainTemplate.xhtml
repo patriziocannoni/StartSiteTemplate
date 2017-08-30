@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=640, initial-scale=1" />
+	
+		<title>#{msgs.mainTitle}</title>
+		
+		<!-- jQuery -->
+	    <h:outputScript library="js" name="jquery.min.js"/>
+	
+	    <!-- Bootstrap -->
+	    <h:outputScript library="js" name="bootstrap.min.js"/>
+		<h:outputStylesheet library="css" name="bootstrap.min.css"/>
+		<h:outputStylesheet library="css" name="template.css"/>
+	
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+	  	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	   	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</h:head>
+	
+	<h:body>
+		<div id="wrapper">
+			<ui:include src="/pages/templates/menu.xhtml" />
+			
+			<div id="page-wrapper">
+				<div class="container-fluid">
+					<ui:insert name="conteudo"/>
+				</div>
+			</div>
+		</div>
+	</h:body>
+</html>

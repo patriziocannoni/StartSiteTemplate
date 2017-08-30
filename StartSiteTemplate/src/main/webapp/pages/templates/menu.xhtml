@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// ADD SLIDEDOWN ANIMATION TO DROPDOWN
+			$(".dropdown").on("show.bs.dropdown", function(e) {
+				$(this).find(".dropdown-menu").first().stop(true, true).slideDown(200);
+			});
+
+			// ADD SLIDEUP ANIMATION TO DROPDOWN
+			$(".dropdown").on("hide.bs.dropdown", function(e) {
+				$(this).find('.dropdown-menu').first().stop(true, true).slideUp(200);
+			});
+		});
+	</script>
+	
+	<nav id="myNavbar" class="navbar navbar-default main-navbar" role="navigation">
+		<h:form>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	               	<span class="sr-only">Toggle navigation</span>
+	               	<span class="icon-bar"></span>
+	               	<span class="icon-bar"></span>
+	               	<span class="icon-bar"></span>
+	           	</button>
+	           	<h:outputLink value="#{request.contextPath}/pages/home.xhtml" styleClass="navbar-brand myNavbar">
+	           		StartSiteTemplate
+	           	</h:outputLink>
+			</div>
+			
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+	           		<li class="dropdown">
+	              		<a href="#" data-toggle="dropdown" class="dropdown-toggle">
+	              			Reserved Area <b class="caret"></b>
+	              		</a>
+	               		<ul class="dropdown-menu">
+	               			<li>
+	               				<h:outputLink value="#{request.contextPath}/pages/secure/profile.xhtml">
+	               					Profile
+	               				</h:outputLink>
+	               			</li>
+                    		<li>
+                    			<h:outputLink value="#{request.contextPath}/pages/secure/preferences.xhtml">
+                    				Preferences
+                    			</h:outputLink>
+                    		</li>
+                    		<li>
+                                <h:outputLink value="#{request.contextPath}/pages/secure/users.xhtml">
+                                    Users
+                                </h:outputLink>
+                            </li>
+	                    	<li>
+	                    		<h:outputLink value="#{request.contextPath}/pages/secure/micro-services.xhtml">
+	                    			Micro Services
+	                    		</h:outputLink>
+	                    	</li>
+	                    	<li>
+	                    		<h:commandLink action="#{userSessionBean.logout()}" value="#{msgs.menuLogout}"/>
+	                    	</li>
+	                	</ul>
+	            	</li>
+	       		</ul>
+			</div>
+		</h:form>
+	</nav>
+</html>

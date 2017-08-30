@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<ui:composition template="/pages/templates/mainTemplate.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:define name="conteudo">
+		<div class="page-header">
+  			<h1>Users</h1>
+		</div>
+
+		<h:dataTable value="#{usersMB.users}" var="user" styleClass="table table-striped table-bordered myTableHeader">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+		        #{user.id}
+		    </h:column>
+			<h:column>
+				<f:facet name="header">NAME</f:facet>
+                      #{user.name}
+                  </h:column>
+			<h:column>
+				<f:facet name="header">FULL NAME</f:facet>
+                      #{user.fullName}
+                  </h:column>
+			<h:column>
+				<f:facet name="header">EMAIL</f:facet>
+                      #{user.email}
+                  </h:column>
+		</h:dataTable>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+:root {
+	--table-header-color: #2f2f2f;
+}
+
+.main-navbar {
+    border-radius: 0px;
+}
+
+.panelTitle {
+	font-size: 1.8em;
+	font-weight: bold;
+}
+
+.myNavbar {
+	font-size: 1.6em;
+	font-style: italic;
+}
+
+.myTableHeader {
+	border-top-color: var(--table-header-color);
+}
+
+.myTableHeader thead tr th {
+	background-color: var(--table-header-color);
+	border-color: var(--table-header-color);
+	color: white;
+}
