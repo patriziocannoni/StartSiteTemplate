@@ -27,11 +27,10 @@ public class UserSessionBean implements Serializable {
 	
 	@PostConstruct
 	private void init() {
-		currentUser = new UserDTO();
 		LOGGER.info("UserSessionBean::init");
 	}
 	
-	public String logout() {
+	public String signOut() {
 		currentUser = null;
 		return null;
 	}
