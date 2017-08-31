@@ -19,5 +19,7 @@
         <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
 
         <navigation-handler>br.com.cannoni.template.controller.RedirectNavigationHandler</navigation-handler>
+        
+        <resource-handler>br.com.cannoni.template.controller.CacheControlResourceHandler</resource-handler>
     </application>
 </faces-config>
