@@ -15,8 +15,8 @@ body {
 .main-navbar {
     border-radius: 0px;
     min-height: var(--navbar-height);
-    font-size: 1.2em;
-    font-weight: 400;
+    font-size: 1.3em;
+    font-weight: 500;
 }
 
 .navbar-title {
@@ -34,7 +34,7 @@ body {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: var(--navbar-font-color);
+    color: red;
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
