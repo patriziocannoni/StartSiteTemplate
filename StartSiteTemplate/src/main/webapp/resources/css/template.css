@@ -22,7 +22,7 @@ body {
 .navbar-title {
     font-size: 1.5em;
     font-style: italic;
-    color: var(--navbar-font-color);
+    color: var(--navbar-font-color) !important;
     padding: 0 15px;
     height: var(--navbar-height);
     line-height: var(--navbar-height);
