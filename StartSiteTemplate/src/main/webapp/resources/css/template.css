@@ -3,9 +3,12 @@
 :root {
 	--table-header-color: #2f2f2f;
 	--navbar-height: 70px;
+	--navbar-font-color: #d8d8d8;
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     padding-top: var(--navbar-height);
 }
 
@@ -13,11 +16,13 @@ body {
     border-radius: 0px;
     min-height: var(--navbar-height);
     font-size: 1.2em;
+    font-weight: 400;
 }
 
 .navbar-title {
     font-size: 1.5em;
     font-style: italic;
+    color: var(--navbar-font-color);
     padding: 0 15px;
     height: var(--navbar-height);
     line-height: var(--navbar-height);
@@ -29,7 +34,7 @@ body {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: #d8d8d8;
+    color: var(--navbar-font-color);
 }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
