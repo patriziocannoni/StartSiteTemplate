@@ -7,74 +7,72 @@
 
     <nav class="navbar navbar-inverse navbar-fixed-top main-navbar">
         <h:form>
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <h:outputLink value="#{request.contextPath}/pages/home.xhtml" styleClass="navbar-brand navbar-title">
-                        Start Site Template
-                    </h:outputLink>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <h:form>
-                        <ul class="nav navbar-nav navbar-right">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h:outputLink value="#{request.contextPath}/pages/home.xhtml" styleClass="navbar-brand navbar-title">
+                    Start Site Template
+                </h:outputLink>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <h:form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <h:outputLink value="#{request.contextPath}/pages/micro-services.xhtml">
+                                Micro Services
+                            </h:outputLink>
+                        </li>
+                                
+                        <h:panelGroup rendered="#{userSessionBean.currentUser == null}">
                             <li>
-                                <h:outputLink value="#{request.contextPath}/pages/micro-services.xhtml">
-                                    Micro Services
+                                <h:outputLink value="#{request.contextPath}/pages/signUp.xhtml">
+                                    #{msgs.menuSignUp}
                                 </h:outputLink>
                             </li>
-                                    
-                            <h:panelGroup rendered="#{userSessionBean.currentUser == null}">
-                                <li>
-                                    <h:outputLink value="#{request.contextPath}/pages/signUp.xhtml">
-                                        #{msgs.menuSignUp}
-                                    </h:outputLink>
-                                </li>
-                                <li>
-                                    <h:outputLink value="#{request.contextPath}/pages/signIn.xhtml">
-                                        #{msgs.menuSignIn}
-                                    </h:outputLink>
-                                </li>
-                            </h:panelGroup>
-                            
-                            <h:panelGroup rendered="#{userSessionBean.currentUser != null}">
-	                            <li class="dropdown">
-	                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"> #{userSessionBean.currentUser} <b class="caret"></b></a>
-	                                <ul class="dropdown-menu">
-                                        <li>
-                                            <h:outputLink value="#{request.contextPath}/pages/secure/profile.xhtml">
-                                                Profile
-                                            </h:outputLink>
-                                        </li>
-	                                    <li>
-	                                        <h:outputLink value="#{request.contextPath}/pages/secure/preferences.xhtml">
-	                                            Preferences
-	                                        </h:outputLink>
-	                                    </li>
-	                                    <li>
-	                                        <h:commandLink action="#{userSessionBean.signOut()}" value="#{msgs.menuSignOut}" />
-	                                    </li>
-	                                </ul>
-	                            </li>
-                            </h:panelGroup>
-                            
+                            <li>
+                                <h:outputLink value="#{request.contextPath}/pages/signIn.xhtml">
+                                    #{msgs.menuSignIn}
+                                </h:outputLink>
+                            </li>
+                        </h:panelGroup>
+                        
+                        <h:panelGroup rendered="#{userSessionBean.currentUser != null}">
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Reserved Area <b class="caret"></b></a>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"> #{userSessionBean.currentUser} <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <h:outputLink value="#{request.contextPath}/pages/secure/users.xhtml">
-                                            Users
+                                        <h:outputLink value="#{request.contextPath}/pages/secure/profile.xhtml">
+                                            Profile
                                         </h:outputLink>
+                                    </li>
+                                    <li>
+                                        <h:outputLink value="#{request.contextPath}/pages/secure/preferences.xhtml">
+                                            Preferences
+                                        </h:outputLink>
+                                    </li>
+                                    <li>
+                                        <h:commandLink action="#{userSessionBean.signOut()}" value="#{msgs.menuSignOut}" />
                                     </li>
                                 </ul>
                             </li>
-                        </ul>
-                    </h:form>
-                </div>
+                        </h:panelGroup>
+                        
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle"> Reserved Area <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <h:outputLink value="#{request.contextPath}/pages/secure/users.xhtml">
+                                        Users
+                                    </h:outputLink>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </h:form>
             </div>
         </h:form>
     </nav>
