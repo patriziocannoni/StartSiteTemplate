@@ -25,7 +25,7 @@ body {
 	.main-navbar {
 	    border-radius: 0px;
 	    min-height: var(--navbar-height);
-	    font-size: 1.3em;
+	    font-size: 1.2em;
 	    font-weight: 500;
 	}
 }
